@@ -64,6 +64,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection {
             locationService?.locationFlow?.collectLatest { location ->
                 location?.let {
                     Log.d("MainActivity", "Lat: ${it.latitude}, Lng: ${it.longitude}")
+                    mainViewModel.obtainWeatherForecast(it)
                 }
             }
         }
