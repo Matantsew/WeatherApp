@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/city_tv"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/tab_city"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/city_name_tv"/>
+
+    <TextView
+        android:id="@+id/city_name_tv"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        tools:text="Kiev"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/city_tv"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/time_tv"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/tab_time"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/city_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/time_data_tv"/>
+
+    <TextView
+        android:id="@+id/time_data_tv"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        tools:text="2025-03-07 15:30"
+        app:layout_constraintTop_toBottomOf="@+id/city_name_tv"
+        app:layout_constraintStart_toEndOf="@id/time_tv"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/sunrise_tv"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/tab_sunrise"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/time_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sunrise_data_tv"/>
+
+    <TextView
+        android:id="@+id/sunrise_data_tv"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        tools:text="04:24"
+        app:layout_constraintTop_toBottomOf="@+id/time_data_tv"
+        app:layout_constraintStart_toEndOf="@id/sunrise_tv"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/sunset_tv"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/tab_sunset"
+        android:textSize="25sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/sunrise_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sunrise_data_tv"/>
+
+    <TextView
+        android:id="@+id/sunset_data_tv"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        tools:text="15:51"
+        app:layout_constraintTop_toBottomOf="@+id/sunrise_data_tv"
+        app:layout_constraintStart_toEndOf="@id/sunset_tv"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

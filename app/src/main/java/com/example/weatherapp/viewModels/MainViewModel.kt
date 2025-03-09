@@ -25,7 +25,9 @@ class MainViewModel(private val repository: WeatherRepository) : ViewModel() {
                 _weatherCurrentFlow.value = it
             }
 
-            repository.getWeatherForecast(latitude, longitude)
+            repository.getWeatherForecast(latitude, longitude).collect {
+                _weatherForecastFlow.value = it
+            }
         }
     }
 }

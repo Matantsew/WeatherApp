@@ -9,8 +9,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 
 class WeatherRepository(private val api: Api,
-                        private val dao: WeatherDao
-) {
+                        private val dao: WeatherDao) {
 
     suspend fun getWeatherCurrent(
         latitude: Double,

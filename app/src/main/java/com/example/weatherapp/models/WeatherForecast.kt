@@ -20,7 +20,7 @@ data class WeatherForecast(
 @Entity(tableName = "weatherForecastCache")
 data class WeatherForecastData(
     @PrimaryKey(autoGenerate = true) val id: Int? = null,
-    val max_temp: Double,
-    val min_temp: Double,
+    val temp: Double,
+    val datetime: String,
     val weather: WeatherInfo
 )

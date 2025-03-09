@@ -2,5 +2,10 @@
     <string name="app_name">Weather</string>
 
     <string name="tab_week_weather">Week</string>
-    <string name="tab_today_weather">Today</string>
+    <string name="tab_empty">-</string>
+    <string name="tab_details_weather">Details</string>
+    <string name="tab_city">City:</string>
+    <string name="tab_time">Time:</string>
+    <string name="tab_sunrise">Sunrise:</string>
+    <string name="tab_sunset">Sunset:</string>
 </resources>

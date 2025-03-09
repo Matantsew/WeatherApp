@@ -35,7 +35,7 @@ class WeatherPagerFragment : Fragment() {
                     tab.text = getString(R.string.tab_week_weather)
                 }
                 1 -> {
-                    tab.text = getString(R.string.tab_today_weather)
+                    tab.text = getString(R.string.tab_details_weather)
                 }
             }
         }.attach()
