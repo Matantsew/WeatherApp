@@ -1,10 +1,11 @@
 package com.example.weatherapp.repositories
 
 import com.example.weatherapp.api.Api
+import com.example.weatherapp.database.WeatherDao
 import com.example.weatherapp.models.WeatherCurrent
 import com.example.weatherapp.models.WeatherForecast
 
-class WeatherRepository(private val api: Api) {
+class WeatherRepository(private val api: Api, private val dao: WeatherDao) {
 
     suspend fun getWeatherCurrent(
         latitude: Double,

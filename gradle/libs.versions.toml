@@ -1,6 +1,6 @@
 [versions]
 agp = "8.5.0"
-kotlin = "2.1.0"
+kotlin = "2.0.0"
 kotlinPluginSerialization = "1.9.20"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -17,6 +17,9 @@ retrofit2KotlinxSerializationConverter = "1.0.0"
 retrofit = "2.11.0"
 kotlinxSerialization = "1.8.0"
 koinAndroid = "3.5.0"
+roomCommon = "2.6.1"
+roomKtx = "2.6.1"
+ksp = "2.0.21-1.0.27"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,9 +37,14 @@ retrofit2-kotlinx-serialization-converter = { group = "com.jakewharton.retrofit"
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
+androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomCommon" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtx" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomCommon" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinPluginSerialization" }
+devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
