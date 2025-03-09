@@ -13,5 +13,6 @@ data class WeatherCurrentData(
     val city_name: String,
     val temp: Float,
     val sunrise: String,
-    val sunset: String
+    val sunset: String,
+    val weather: WeatherInfo
 )

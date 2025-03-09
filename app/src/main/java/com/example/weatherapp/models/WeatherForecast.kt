@@ -15,8 +15,3 @@ data class WeatherForecastData(
     val min_temp: Double,
     val weather: WeatherInfo
 )
-
-@Serializable
-data class WeatherInfo(
-    val description: String
-)

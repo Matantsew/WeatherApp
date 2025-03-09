@@ -16,6 +16,7 @@ okhttp = "5.0.0-alpha.14"
 retrofit2KotlinxSerializationConverter = "1.0.0"
 retrofit = "2.11.0"
 kotlinxSerialization = "1.8.0"
+koinAndroid = "3.5.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,6 +33,7 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 retrofit2-kotlinx-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

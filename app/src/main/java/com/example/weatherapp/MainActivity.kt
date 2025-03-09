@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.weatherapp.fragments.WeatherPagerFragment
@@ -17,10 +16,11 @@ import com.example.weatherapp.services.LocationService
 import com.example.weatherapp.viewModels.MainViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity(), ServiceConnection {
 
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModel()
 
     private var locationService: LocationService? = null
     private var isBound = false
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection {
             locationService?.locationFlow?.collectLatest { location ->
                 location?.let {
                     Log.d("MainActivity", "Lat: ${it.latitude}, Lng: ${it.longitude}")
-                    mainViewModel.obtainWeatherForecast(it)
+                    mainViewModel.obtainWeather(it)
                 }
             }
         }
