@@ -11,6 +11,8 @@ import org.koin.dsl.module
 
 val appModule = module {
     single<Api> { ApiBuilder.build() }
-    single<WeatherRepository> { WeatherRepository(get(), WeatherDatabase.getDatabase(androidContext()).weatherDao()) }
+    single<WeatherRepository> {
+        WeatherRepository(get(),
+        WeatherDatabase.getDatabase(androidContext()).weatherCurrentDao()) }
     viewModel<MainViewModel> { MainViewModel(get()) }
 }

@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.weatherapp.models.WeatherCurrent
 import com.example.weatherapp.models.WeatherForecast
 import com.example.weatherapp.repositories.WeatherRepository
-import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -21,12 +20,12 @@ class MainViewModel(private val repository: WeatherRepository) : ViewModel() {
 
     fun obtainWeather(location: Location) = with(location) {
         viewModelScope.launch {
-            val weatherCurrentResponse = async { repository.getWeatherCurrent(latitude, longitude, "1hour") }.await()
-            _weatherCurrentFlow.value = weatherCurrentResponse
 
-            val weatherForecastResponse = async { repository.getWeatherForecast(latitude, longitude) }.await()
-            _weatherForecastFlow.value = weatherForecastResponse
+            repository.getWeatherCurrent(latitude, longitude, "1hour").collect {
+                _weatherCurrentFlow.value = it
+            }
+
+            repository.getWeatherForecast(latitude, longitude)
         }
     }
-
 }

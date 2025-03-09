@@ -3,12 +3,12 @@ package com.example.weatherapp.models
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import com.example.weatherapp.database.WeatherListTypeConverter
+import com.example.weatherapp.database.WeatherCurrentListConverter
 import kotlinx.serialization.Serializable
 
 @Serializable
-@Entity(tableName = "weatherCache")
-@TypeConverters(WeatherListTypeConverter::class)
+@Entity(tableName = "weatherCurrentCache")
+@TypeConverters(WeatherCurrentListConverter::class)
 data class WeatherCurrent(
     @PrimaryKey(autoGenerate = true) val id: Int? = null,
     val count: Int,
@@ -16,7 +16,7 @@ data class WeatherCurrent(
 )
 
 @Serializable
-@Entity(tableName = "weatherCache")
+@Entity(tableName = "weatherCurrentCache")
 data class WeatherCurrentData(
     @PrimaryKey(autoGenerate = true) val id: Int? = null,
     val city_name: String,

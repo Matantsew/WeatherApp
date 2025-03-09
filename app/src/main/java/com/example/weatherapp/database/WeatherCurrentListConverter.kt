@@ -4,7 +4,7 @@ import androidx.room.TypeConverter
 import com.example.weatherapp.models.WeatherCurrentData
 import kotlinx.serialization.json.Json
 
-class WeatherListTypeConverter {
+class WeatherCurrentListConverter {
 
     @TypeConverter
     fun fromWeatherCurrentDataList(weatherCurrentData: List<WeatherCurrentData>): String {
